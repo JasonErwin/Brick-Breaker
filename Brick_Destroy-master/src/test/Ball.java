@@ -75,6 +75,14 @@ abstract public class Ball {
         speedY = s;
     }
 
+    public int getSpeedX(){
+        return speedX;
+    }
+
+    public int getSpeedY(){
+        return speedY;
+    }
+
     public void reverseX(){
         speedX *= -1;
     }
@@ -83,21 +91,6 @@ abstract public class Ball {
         speedY *= -1;
     }
 
-    public Color getBorderColor(){
-        return border;
-    }
-
-    public Color getInnerColor(){
-        return inner;
-    }
-
-    public Point2D getPosition(){
-        return center;
-    }
-
-    public Shape getBallFace(){
-        return ballFace;
-    }
 
     public void moveTo(Point p){
         center.setLocation(p);
@@ -118,13 +111,20 @@ abstract public class Ball {
         right.setLocation(center.getX()+(width / 2),center.getY());
     }
 
-    public int getSpeedX(){
-        return speedX;
+    public Color getBorderColor(){
+        return border;
     }
 
-    public int getSpeedY(){
-        return speedY;
+    public Color getInnerColor(){
+        return inner;
     }
 
+    public Point2D getPosition(){
+        return center;
+    }
+
+    public Shape getBallFace(){
+        return ballFace;
+    }
 
 }
