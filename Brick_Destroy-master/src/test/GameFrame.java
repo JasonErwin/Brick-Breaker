@@ -47,7 +47,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
         this.add(homeMenu,BorderLayout.CENTER);
 
-        this.setUndecorated(true);
+        this.setUndecorated(false); //add or remove menu bar of the program
 
 
     }
