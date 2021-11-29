@@ -47,7 +47,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
         this.setUndecorated(false); //add or remove menu bar of the program
 
-
+        this.setResizable(false); // restrict resizing of window.
     }
 
     public void initialize(){
