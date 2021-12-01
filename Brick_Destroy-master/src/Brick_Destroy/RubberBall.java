@@ -31,7 +31,7 @@ public class RubberBall extends Ball {
 
     public RubberBall(Point2D center){
         super(center,DEF_RADIUS,DEF_RADIUS,DEF_INNER_COLOR,DEF_BORDER_COLOR);
-    }
+    } // constructor to instantiate ball properties into superclass.
 
 
     @Override
@@ -41,5 +41,5 @@ public class RubberBall extends Ball {
         double y = center.getY() - (radiusB / 2);
 
         return new Ellipse2D.Double(x,y,radiusA,radiusB);
-    }
+    } //abstract class from ball to make ball.
 }

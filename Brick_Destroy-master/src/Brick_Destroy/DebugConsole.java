@@ -45,7 +45,7 @@ public class DebugConsole extends JDialog implements WindowListener{
 
 
         this.pack();
-    }
+    } //constructor to instantiate DebugConsole when it is call
 
     private void initialize(){
         this.setModal(true);
@@ -54,14 +54,14 @@ public class DebugConsole extends JDialog implements WindowListener{
         this.setLayout(new BorderLayout());
         this.addWindowListener(this);
         this.setFocusable(true);
-    }
+    }//set the pop up for debug console
 
 
     private void setLocation(){
         int x = ((owner.getWidth() - this.getWidth()) / 2) + owner.getX();
         int y = ((owner.getHeight() - this.getHeight()) / 2) + owner.getY();
         this.setLocation(x,y);
-    }
+    }// set where the pop up for debug console is set
 
 
     @Override
@@ -72,7 +72,7 @@ public class DebugConsole extends JDialog implements WindowListener{
     @Override
     public void windowClosing(WindowEvent windowEvent) {
         gameBoard.repaint();
-    }
+    } //method to repaint the gameboard once pressed to close dubg console
 
     @Override
     public void windowClosed(WindowEvent windowEvent) {
@@ -94,7 +94,7 @@ public class DebugConsole extends JDialog implements WindowListener{
         setLocation();
         Ball b = wall.ball;
         debugPanel.setValues(b.getSpeedX(),b.getSpeedY());
-    }
+    } // controls when debug console is on
 
     @Override
     public void windowDeactivated(WindowEvent windowEvent) {

@@ -27,12 +27,13 @@ public class ClayBrick extends Brick {
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {
         return new Rectangle(pos,size);
-    }
+    }// used by brick, abstract method from brick
+
 
     @Override
     public Shape getBrick() {
         return super.brickFace;
-    }
+    } // abstract method provided by brick. , USed by gameboard.
 
 
 }

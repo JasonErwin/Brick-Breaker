@@ -45,9 +45,9 @@ abstract public class Ball {
         this.inner  = inner;
         speedX = 0;
         speedY = 0;
-    }
+    } //constructor to instantiate elements when it is called.
 
-    protected abstract Shape makeBall(Point2D center,int radiusA,int radiusB);
+    protected abstract Shape makeBall(Point2D center,int radiusA,int radiusB); //abstract class to makeBall, Used by Rubber Ball
 
     public void move(){
         RectangularShape tmp = (RectangularShape) ballFace;
@@ -60,36 +60,36 @@ abstract public class Ball {
 
 
         ballFace = tmp;
-    }
+    }//method for ball movement
 
     public void setSpeed(int x,int y){
         speedX = x;
         speedY = y;
-    }
+    } //methods to set Ball Speed , Used by Wall Class
 
     public void setXSpeed(int s){
         speedX = s;
-    }
+    } //setter to set the x axis speed, Used by Wall Class
 
     public void setYSpeed(int s){
         speedY = s;
-    }
+    } //setter to set the y axis speed, Used by Wall Class
 
     public int getSpeedX(){
         return speedX;
-    }
+    } //getter to get the x axis speed, Used by debug panel
 
     public int getSpeedY(){
         return speedY;
-    }
+    } // getter to get the y axis speed , Used by debug panel
 
     public void reverseX(){
         speedX *= -1;
-    }
+    } //setter to reverse the x axis , used by WAll
 
     public void reverseY(){
         speedY *= -1;
-    }
+    } // setter to reverse the  y axis ,used by wall
 
 
     public void moveTo(Point p){
@@ -101,7 +101,7 @@ abstract public class Ball {
 
         tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h);
         ballFace = tmp;
-    }
+    }//method to allow ball to move to a certain point, Used by wall
 
     private void setPoints(double width,double height){
         up.setLocation(center.getX(),center.getY()-(height / 2));
@@ -109,22 +109,22 @@ abstract public class Ball {
 
         left.setLocation(center.getX()-(width / 2),center.getY());
         right.setLocation(center.getX()+(width / 2),center.getY());
-    }
+    } // used by ball, method to set Ball points
 
     public Color getBorderColor(){
         return border;
-    }
+    } //getter to return border, Used by Game board
 
     public Color getInnerColor(){
         return inner;
-    }
+    } //getter to return inner, used by game board
 
     public Point2D getPosition(){
         return center;
-    }
+    }//getter to return center, Used by player and Wall
 
     public Shape getBallFace(){
         return ballFace;
-    }
+    }//getter to return ballFace, Used by game Board
 
 }
