@@ -41,8 +41,6 @@ public class Wall {
     Ball ball;
     Player player;
 
-
-
     private Point startPoint;
 
     public void setBrickCount(int brickCount) {

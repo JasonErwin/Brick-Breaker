@@ -126,5 +126,5 @@ public class Level {
     private Brick makeBrick(Point point, Dimension size, String type) {
         BrickFactory brickFactory = new BrickFactory();
         return brickFactory.makeBrick(point, size, type);
-    }
+    } //makeBrick method that passes elements to brickFactory
 }
