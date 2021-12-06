@@ -28,18 +28,18 @@ public class Crack {
             this.crackDepth = crackDepth;
             this.steps = steps;
 
-        } //constructor to instantiate crack properties when it is called, used by cement
+        }
 
 
 
         public GeneralPath draw(){
 
             return crack;
-        } // method to return crack, used in cement
+        }
 
         public void reset(){
             crack.reset();
-        } //method to remove te crack icon from bricks, Used in cement brick
+        }
 
         protected void makeCrack(Point2D point, int direction,Shape brickFace){
             Rectangle bounds = brickFace.getBounds();
@@ -79,7 +79,7 @@ public class Crack {
                     break;
 
             }
-        } // method to crack the brick
+        }
 
         protected void makeCrack(Point start, Point end){
 

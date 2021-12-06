@@ -91,7 +91,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
 
 
-    } //constructor to instantiate Home Menu
+    }
 
 
     public void paint(Graphics g){
@@ -124,7 +124,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.translate(-x,-y);
         g2d.setFont(prevFont);
         g2d.setColor(prevColor);
-    } // method to draw menu
+    }
 
     private void drawContainer(Graphics2D g2d){
         Color prev = g2d.getColor();
@@ -145,7 +145,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.setStroke(tmp);
 
         g2d.setColor(prev);
-    } //method to draw container
+    }
 
     private void drawText(Graphics2D g2d){
 
@@ -178,7 +178,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.drawString(CREDITS,sX,sY);
 
 
-    } //method to draw text
+    }
 
     private void drawButton(Graphics2D g2d){
 
@@ -246,7 +246,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
             g2d.drawString(MENU_TEXT,x,y);
         }
 
-    } // method to draw button
+    }
 
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
@@ -259,7 +259,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
             System.out.println("Goodbye " + System.getProperty("user.name"));
             System.exit(0);
         }
-    } // eventhandling if mousceclicked
+    }
 
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
@@ -273,7 +273,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
             menuClicked = true;
             repaint(menuButton.x,menuButton.y,menuButton.width+1,menuButton.height+1);
         }
-    } // eventhandling if mouse pressed
+    }
 
     @Override
     public void mouseReleased(MouseEvent mouseEvent) {
@@ -285,7 +285,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
             menuClicked = false;
             repaint(menuButton.x,menuButton.y,menuButton.width+1,menuButton.height+1);
         }
-    }//event handling if mouse is released
+    }
 
     @Override
     public void mouseEntered(MouseEvent mouseEvent) {
@@ -311,5 +311,5 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         else
             this.setCursor(Cursor.getDefaultCursor());
 
-    }// event handling for mouse being moved.
+    }
 }

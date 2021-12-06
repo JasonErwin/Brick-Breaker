@@ -48,26 +48,28 @@ abstract public class Brick  {
         this.inner = inner;
         this.fullStrength = this.strength = strength;
 
-    }// constructor to instantiate brick properties when called
+    }
 
-    protected abstract Shape makeBrickFace(Point pos,Dimension size); //abstract method to makeBrickface,Used by Brick
+    protected abstract Shape makeBrickFace(Point pos,Dimension size);
 
     public  boolean setImpact(Point2D point , int dir){
         if(broken)
             return false;
         impact();
         return  broken;
-    } //method to check Brick's Impact, used in Wall Class
+    }
 
-    public abstract Shape getBrick(); //abstract method to get brick, Used by Game board
+    public abstract Shape getBrick();
+
+
 
     public Color getBorderColor(){
         return  border;
-    } // getter for border color, used by GameBoard
+    }
 
     public Color getInnerColor(){
         return inner;
-    } // getter for inner color , used by GameBoard
+    }
 
 
     public final int findImpact(Ball b){
@@ -83,20 +85,20 @@ abstract public class Brick  {
         else if(brickFace.contains(b.down))
             out = UP_IMPACT;
         return out;
-    } //method to find Ball Impact with brick , used by WAll Class
+    }
 
     public final boolean isBroken(){
         return broken;
-    } // method to return broken, Used by CementBrick, GameBoard , SteelBrick
+    }
 
     public void repair() {
         broken = false;
         strength = fullStrength;
-    } //mehthod to restore brick to its original state, used by CementBrick
+    }
 
     public void impact(){
         strength--;
         broken = (strength == 0);
-    } // impact method to  destroy cement brick , used bt CementBrick Class
+    }
 
 }

@@ -37,30 +37,30 @@ public class SteelBrick extends Brick {
         super(NAME,point,size,DEF_BORDER,DEF_INNER,STEEL_STRENGTH);
         rnd = new Random();
         brickFace = super.brickFace;
-    } // constructor to instantiate SteelBrick properties when it is called
+    }
 
 
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {
         return new Rectangle(pos,size);
-    } // used abstract method provided by brick
+    }
 
     @Override
     public Shape getBrick() {
         return brickFace;
-    } // used abstract method provided by brick
+    }
 
     public  boolean setImpact(Point2D point , int dir){
         if(super.isBroken())
             return false;
         impact();
         return  super.isBroken();
-    } //check whether SteelBrick has impact with Ball.
+    }
 
     public void impact(){
         if(rnd.nextDouble() < STEEL_PROBABILITY){
             super.impact();
         }
-    }// impact method to check whether to destroy steel brick
+    }
 
 }

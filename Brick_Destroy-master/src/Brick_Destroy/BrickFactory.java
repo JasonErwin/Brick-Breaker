@@ -16,5 +16,5 @@ public class BrickFactory {
             return new SteelBrick(point, size);
         }
         return null;
-    } //Factory used in Level Class.
+    }
 }

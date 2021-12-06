@@ -26,4 +26,4 @@ public class GraphicsMain {
         EventQueue.invokeLater(() -> new GameFrame().initialize());
     }
 
-} //Main to run the program
+}

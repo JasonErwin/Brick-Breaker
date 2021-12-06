@@ -48,7 +48,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.setUndecorated(false); //add or remove menu bar of the program
 
         this.setResizable(false); // restrict resizing of window.
-    } // constructor to instantiate game frame when called
+    }
 
     public void initialize(){
         this.setTitle(DEF_TITLE);
@@ -56,7 +56,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.pack();
         this.autoLocate();
         this.setVisible(true);
-    } // intialize the game frame
+    }
 
     public void enableGameBoard(){
         this.dispose();
@@ -67,7 +67,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         /*to avoid problems with graphics focus controller is added here*/
         this.addWindowFocusListener(this);
 
-    } // activate game board
+    }
 
     private void autoLocate(){
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
@@ -88,12 +88,12 @@ public class GameFrame extends JFrame implements WindowFocusListener {
             at least once
          */
         gaming = true;
-    } // in focus screen
+    }
 
     @Override
     public void windowLostFocus(WindowEvent windowEvent) {
         if(gaming)
             gameBoard.onLostFocus();
 
-    } // lost focus screen
+    }
 }

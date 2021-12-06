@@ -42,16 +42,16 @@ public class Player {
         min = container.x + (width / 2);
         max = min + container.width - width;
 
-    } //when calling new player, constructor will instantiate player properties. Used by Wall Constructor
+    }
 
     private Rectangle makeRectangle(int width,int height){
         Point p = new Point((int)(ballPoint.getX() - (width / 2)),(int)ballPoint.getY());
         return  new Rectangle(p,new Dimension(width,height));
-    } // method to draw a new rectangle.
+    }
 
     public boolean impact(Ball b){
         return playerFace.contains(b.getPosition()) && playerFace.contains(b.down) ;
-    } // boolean method to check whether the rectangle is touched by the ball. , getPosition Method from ball.
+    }
 
     public void move(){
         double x = ballPoint.getX() + moveAmount;
@@ -63,19 +63,19 @@ public class Player {
 
     public void moveLeft(){
         moveAmount = -DEF_MOVE_AMOUNT;
-    } //player move left method
+    }
 
     public void movRight(){
         moveAmount = DEF_MOVE_AMOUNT;
-    } //player move right method
+    }
 
     public void stop(){
         moveAmount = 0;
-    } //player stop moving method
+    }
 
     public Shape getPlayerFace(){
         return  playerFace;
-    } // getter to return playerFace
+    }
 
     public void moveTo(Point p){
         ballPoint.setLocation(p);

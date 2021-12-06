@@ -21,12 +21,12 @@ public class CementBrick extends Brick {
         super(NAME,point,size,DEF_BORDER,DEF_INNER,CEMENT_STRENGTH);
         crack = new Crack(DEF_CRACK_DEPTH,DEF_STEPS);
         brickFace = super.brickFace;
-    } //constructor to instantiate cementbrick properties when it is called
+    }
 
     @Override
     protected Shape makeBrickFace(Point pos, Dimension size) {
         return new Rectangle(pos,size);
-    } //abstract method provided by brick, used by Brick
+    }
 
     @Override
     public boolean setImpact(Point2D point, int dir) {
@@ -39,13 +39,13 @@ public class CementBrick extends Brick {
             return false;
         }
         return true;
-    }// check whether there is ball impact with cementbrick
+    }
 
 
     @Override
     public Shape getBrick() {
         return brickFace;
-    } //abstract method provided by brick, used by gameboard
+    }
 
     private void updateBrick(){
         if(!super.isBroken()){
@@ -53,11 +53,11 @@ public class CementBrick extends Brick {
             gp.append(super.brickFace,false);
             brickFace = gp;
         }
-    } //method to display crack icon.
+    }
 
     public void repair(){
         super.repair();
         crack.reset();
         brickFace = super.brickFace;
-    }// method to restore cement brick to its original form
+    }
 }
