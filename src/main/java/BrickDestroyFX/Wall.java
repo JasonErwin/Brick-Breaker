@@ -19,7 +19,17 @@ public class Wall {
     }
 
     Brick[] bricks;
+
+    public Ball getBall() {
+        return ball;
+    }
+
     Ball ball;
+
+    public Player getPlayer() {
+        return player;
+    }
+
     Player player;
 
     private Point2D startPoint;

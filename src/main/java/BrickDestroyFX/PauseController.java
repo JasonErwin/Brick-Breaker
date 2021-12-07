@@ -30,9 +30,8 @@ public class PauseController {
 
 
 
-    public void initialize(Wall wall , GameBoard gameBoard, Stage stage, GraphicsContext gc){
+    public void initialize(Wall wall , Stage stage, GraphicsContext gc){
          this.wall=wall;
-         this.gameBoard=gameBoard;
          this.stage=stage;
          this.gc=gc;
     }
@@ -49,9 +48,11 @@ public class PauseController {
     }
 
     public void restart(ActionEvent event){
+       GameBoardModel gameBoardModel= new GameBoardModel();
+       GameBoardView gameBoardView= new GameBoardView(gameBoardModel,wall);
         wall.ballReset();
         wall.wallReset();
-        gameBoard.repaint();
+        gameBoardView.repaint();
         currentStage=(Stage)restartButton.getScene().getWindow();
         currentStage.close();
         stage.getScene().getRoot().setEffect(null);

@@ -3,12 +3,14 @@ package BrickDestroyFX;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Point2D;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,7 +24,10 @@ public class Controller {
 
     private Scene scene;
     private Stage stage;
-
+    private Wall wall;
+    private Level level;
+    private static final int DEF_WIDTH = 600;
+    private static final int DEF_HEIGHT = 450;
 
     public void logout(ActionEvent event){
         Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
@@ -54,8 +59,13 @@ public class Controller {
     }
 
     public void Start(ActionEvent event) throws IOException{
-        GameBoard gameBoard= new GameBoard();
+        wall =new Wall(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2,new Point2D(300,430));
+        level=new Level(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2,new Point2D(300,430),wall);
+        level.nextLevel();
+        GameBoardModel gameBoardModel= new GameBoardModel();
+        GameBoardView gameBoardView= new GameBoardView(gameBoardModel,wall);
+        GameBoardController gameBoardController=new GameBoardController(gameBoardModel,gameBoardView,level,wall);
         Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(gameBoard.getScene());
+        stage.setScene(gameBoardView.getScene());
     }
 }
