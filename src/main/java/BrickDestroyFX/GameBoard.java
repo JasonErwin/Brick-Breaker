@@ -194,7 +194,7 @@ public class GameBoard {
                         newStage.setScene(scene);
                         newStage.show();
                         DebugController debugController= fxmlLoader.getController();
-                        debugController.initializeDebug(wall,this,level);
+                        debugController.initializeDebug(wall,level);
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }

@@ -18,14 +18,13 @@ public class DebugController implements Initializable {
     @FXML
     private Slider ySlider;
 
-    private GameBoard gameBoard;
+
     private Wall wall;
     private Level level;
     private int newX;
     private int newY;
 
-    public void initializeDebug(Wall wall, GameBoard gameBoard, Level level) {
-        this.gameBoard = gameBoard;
+    public void initializeDebug(Wall wall, Level level) {
         this.wall = wall;
         this.level = level;
     }
