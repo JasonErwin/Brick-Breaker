@@ -24,7 +24,6 @@ abstract public class Brick {
     private Dimension2D size;
     private String name;
 
-
     Shape brickFace;
 
     private Color border;
@@ -66,7 +65,6 @@ abstract public class Brick {
     public Color getInnerColor(){
         return inner;
     } // getter for inner color , used by GameBoard
-
 
     public final int findImpact(Ball b){
         if(broken)

@@ -9,34 +9,11 @@ public class Wall {
     private Random rnd;
     private Rectangle area;
 
-
-    public void setBricks(Brick[] bricks) {
-        this.bricks = bricks;
-    }
-
-    public Brick[] getBricks() {
-        return bricks;
-    }
-
     Brick[] bricks;
-
-    public Ball getBall() {
-        return ball;
-    }
-
     Ball ball;
 
-    public Player getPlayer() {
-        return player;
-    }
-
     Player player;
-
     private Point2D startPoint;
-
-    public void setBrickCount(int brickCount) {
-        this.brickCount = brickCount;
-    }
 
     private int brickCount;
     private int ballCount;
@@ -189,5 +166,25 @@ public class Wall {
     public void resetBallCount(){
         ballCount = 3;
     } //method to set ball to 3
+
+    public void setBricks(Brick[] bricks) {
+        this.bricks = bricks;
+    }
+
+    public Brick[] getBricks() {
+        return bricks;
+    }
+
+    public Ball getBall() {
+        return ball;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setBrickCount(int brickCount) {
+        this.brickCount = brickCount;
+    }
 }
 

@@ -37,7 +37,7 @@ public class Level {
         Brick[] tmp = new Brick[brickCnt];
 
         Dimension2D brickSize = new Dimension2D((int) brickLen, (int) brickHgt);
-        Point2D p = new Point2D(0,0);
+        Point2D p = new Point2D(0, 0);
 
         int i;
         for (i = 0; i < tmp.length; i++) {
@@ -48,13 +48,13 @@ public class Level {
             x = (line % 2 == 0) ? x : (x - (brickLen / 2));
             double y = (line) * brickHgt;
             //p=setLocation(x, y);
-            p=new Point2D(x,y);
+            p = new Point2D(x, y);
             tmp[i] = makeBrick(p, brickSize, type);
         }
 
         for (double y = brickHgt; i < tmp.length; i++, y += 2 * brickHgt) {
             double x = (brickOnLine * brickLen) - (brickLen / 2);
-            p= new Point2D(x, y);
+            p = new Point2D(x, y);
             tmp[i] = new ClayBrick(p, brickSize);
         }
         return tmp;
@@ -81,7 +81,7 @@ public class Level {
         Brick[] tmp = new Brick[brickCnt];
 
         Dimension2D brickSize = new Dimension2D((int) brickLen, (int) brickHgt);
-        Point2D p = new Point2D(0,0);
+        Point2D p = new Point2D(0, 0);
 
         int i;
         for (i = 0; i < tmp.length; i++) {
@@ -92,7 +92,7 @@ public class Level {
             double x = posX * brickLen;
             x = (line % 2 == 0) ? x : (x - (brickLen / 2));
             double y = (line) * brickHgt;
-            p=new Point2D(x, y);
+            p = new Point2D(x, y);
 
             boolean b = ((line % 2 == 0 && i % 2 == 0) || (line % 2 != 0 && posX > centerLeft && posX <= centerRight));
             tmp[i] = b ? makeBrick(p, brickSize, typeA) : makeBrick(p, brickSize, typeB);
@@ -100,7 +100,7 @@ public class Level {
 
         for (double y = brickHgt; i < tmp.length; i++, y += 2 * brickHgt) {
             double x = (brickOnLine * brickLen) - (brickLen / 2);
-            p=new Point2D(x, y);
+            p = new Point2D(x, y);
             tmp[i] = makeBrick(p, brickSize, typeA);
         }
         return tmp;

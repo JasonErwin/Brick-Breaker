@@ -14,13 +14,13 @@ public class ClayBrick extends Brick {
     private static final Color DEF_BORDER = Color.GRAY;
     private static final int CLAY_STRENGTH = 1;
 
-    public ClayBrick(Point2D point, Dimension2D size){
-        super(NAME,point,size,DEF_BORDER,DEF_INNER,CLAY_STRENGTH);
+    public ClayBrick(Point2D point, Dimension2D size) {
+        super(NAME, point, size, DEF_BORDER, DEF_INNER, CLAY_STRENGTH);
     }
 
     @Override
     public Shape makeBrickFace(Point2D pos, Dimension2D size) {
-        return new Rectangle(pos.getX(),pos.getY(),size.getWidth(),size.getHeight());
+        return new Rectangle(pos.getX(), pos.getY(), size.getWidth(), size.getHeight());
     }// used by brick, abstract method from brick
 
 

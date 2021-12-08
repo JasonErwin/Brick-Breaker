@@ -1,13 +1,12 @@
 package BrickDestroyFX.Model;
 
-
 import BrickDestroyFX.Model.Level;
 import BrickDestroyFX.Model.Wall;
 
 public class GameBoardModel {
 
 
-    private String input ;
+    private String input;
     private String message;
 
     public boolean isCheck() {
@@ -20,11 +19,11 @@ public class GameBoardModel {
     private static final int DEF_WIDTH = 600;
     private static final int DEF_HEIGHT = 450;
 
-    public GameBoardModel(){
-       message= "";
-       input="";
-       run=false;
-       check=false;
+    public GameBoardModel() {
+        message = "";
+        input = "";
+        run = false;
+        check = false;
     }
 
     public String getMessage() {
@@ -54,6 +53,5 @@ public class GameBoardModel {
     public void setCheck(boolean check) {
         this.check = check;
     }
-
 
 }

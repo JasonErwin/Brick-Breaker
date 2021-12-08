@@ -27,92 +27,90 @@ public class Crack {
     private int steps;
 
 
-    public Crack(int crackDepth, int steps){
+    public Crack(int crackDepth, int steps) {
         crack = new Path();
         this.crackDepth = crackDepth;
         this.steps = steps;
-        rnd=new Random();
+        rnd = new Random();
 
     } //constructor to instantiate crack properties when it is called, used by cement
 
-
-
-    public Path draw(){
+    public Path draw() {
 
         return crack;
     } // method to return crack, used in cement
 
-    public void reset(){
+    public void reset() {
         crack.getElements().clear();
     } //method to remove te crack icon from bricks, Used in cement brick
 
-    public void makeCrack(Point2D point, int direction, Shape brickFace){
-        Bounds bounds =brickFace.getBoundsInParent();
+    public void makeCrack(Point2D point, int direction, Shape brickFace) {
+        Bounds bounds = brickFace.getBoundsInParent();
 
-        Point2D impact = new Point2D((int)point.getX(),(int)point.getY());
-        Point2D start ;
-        Point2D end ;
+        Point2D impact = new Point2D((int) point.getX(), (int) point.getY());
+        Point2D start;
+        Point2D end;
 
 
-        switch(direction){
+        switch (direction) {
             case LEFT:
-                start=new Point2D(bounds.getMaxX() , bounds.getMinY());
-                end=new Point2D(bounds.getMaxX(), bounds.getMaxY());
-                Point2D tmp = makeRandomPoint(start,end,VERTICAL);
-                makeCrack(impact,tmp);
+                start = new Point2D(bounds.getMaxX(), bounds.getMinY());
+                end = new Point2D(bounds.getMaxX(), bounds.getMaxY());
+                Point2D tmp = makeRandomPoint(start, end, VERTICAL);
+                makeCrack(impact, tmp);
 
                 break;
             case RIGHT:
-                start=new Point2D(bounds.getMinX(),bounds.getMinY());
-                end=new Point2D(bounds.getMinX(),  bounds.getMaxY());
-                tmp = makeRandomPoint(start,end,VERTICAL);
-                makeCrack(impact,tmp);
+                start = new Point2D(bounds.getMinX(), bounds.getMinY());
+                end = new Point2D(bounds.getMinX(), bounds.getMaxY());
+                tmp = makeRandomPoint(start, end, VERTICAL);
+                makeCrack(impact, tmp);
 
                 break;
             case UP:
-                start=new Point2D(bounds.getMinX(), bounds.getMaxY());
-                end=new Point2D(bounds.getMaxX(), bounds.getMinY());
-                tmp = makeRandomPoint(start,end,HORIZONTAL);
-                makeCrack(impact,tmp);
+                start = new Point2D(bounds.getMinX(), bounds.getMaxY());
+                end = new Point2D(bounds.getMaxX(), bounds.getMinY());
+                tmp = makeRandomPoint(start, end, HORIZONTAL);
+                makeCrack(impact, tmp);
                 break;
             case DOWN:
-                start=new Point2D(bounds.getMinX(),bounds.getMinY());
-                end=new Point2D(bounds.getMaxX(), bounds.getMinY());
-                tmp = makeRandomPoint(start,end,HORIZONTAL);
-                makeCrack(impact,tmp);
+                start = new Point2D(bounds.getMinX(), bounds.getMinY());
+                end = new Point2D(bounds.getMaxX(), bounds.getMinY());
+                tmp = makeRandomPoint(start, end, HORIZONTAL);
+                makeCrack(impact, tmp);
 
                 break;
 
         }
     } // method to crack the brick
 
-    protected void makeCrack(Point2D start, Point2D end){
+    protected void makeCrack(Point2D start, Point2D end) {
 
         Path path = new Path();
 
 
         //path move to(start.x,start.y);
-        MoveTo moveTo=new MoveTo();
+        MoveTo moveTo = new MoveTo();
         moveTo.setX(start.getX());
         moveTo.setY(start.getY());
 
         path.getElements().add(moveTo);
 
-        double w = (end.getX() - start.getX()) / (double)steps;
-        double h = (end.getY() - start.getY()) / (double)steps;
+        double w = (end.getX() - start.getX()) / (double) steps;
+        double h = (end.getY() - start.getY()) / (double) steps;
 
         int bound = crackDepth;
-        int jump  = bound * 5;
+        int jump = bound * 5;
 
-        double x,y;
+        double x, y;
 
-        for(int i = 1; i < steps;i++){
+        for (int i = 1; i < steps; i++) {
 
             x = (i * w) + start.getX();
             y = (i * h) + start.getY() + randomInBounds(bound);
 
-            if(inMiddle(i,CRACK_SECTIONS,steps))
-                y += jumps(jump,JUMP_PROBABILITY);
+            if (inMiddle(i, CRACK_SECTIONS, steps))
+                y += jumps(jump, JUMP_PROBABILITY);
 
             //LineTo lineTo = (x,y);
             LineTo lineTo = new LineTo();
@@ -123,47 +121,47 @@ public class Crack {
         }
 
         //path.lineTo(end.getX(),end.getY());
-        LineTo lineto= new LineTo();
+        LineTo lineto = new LineTo();
         lineto.setX(end.getX());
         lineto.setY(end.getY());
         path.getElements().add(lineto);
 
-        crack= path;
+        crack = path;
     }
 
-    private int randomInBounds(int bound){
+    private int randomInBounds(int bound) {
         int n = (bound * 2) + 1;
         return rnd.nextInt(n) - bound;
     }
 
-    private boolean inMiddle(int i,int steps,int divisions){
+    private boolean inMiddle(int i, int steps, int divisions) {
         int low = (steps / divisions);
         int up = low * (divisions - 1);
 
-        return  (i > low) && (i < up);
+        return (i > low) && (i < up);
     }
 
-    private int jumps(int bound,double probability){
+    private int jumps(int bound, double probability) {
 
-        if(rnd.nextDouble() > probability)
+        if (rnd.nextDouble() > probability)
             return randomInBounds(bound);
-        return  0;
+        return 0;
 
     }
 
-    private Point2D makeRandomPoint(Point2D from,Point2D to, int direction){
+    private Point2D makeRandomPoint(Point2D from, Point2D to, int direction) {
 
-        Point2D out = new Point2D(0,0);
+        Point2D out = new Point2D(0, 0);
         int pos;
 
-        switch(direction){
+        switch (direction) {
             case HORIZONTAL:
-                pos = rnd.nextInt((int) to.getX() - (int)from.getX()) + (int)from.getX();
-                out= new Point2D(pos,to.getY());
+                pos = rnd.nextInt((int) to.getX() - (int) from.getX()) + (int) from.getX();
+                out = new Point2D(pos, to.getY());
                 break;
             case VERTICAL:
-                pos = rnd.nextInt((int)to.getY() - (int)from.getY()) + (int)from.getY();
-                out=new Point2D(to.getX(),pos);
+                pos = rnd.nextInt((int) to.getY() - (int) from.getY()) + (int) from.getY();
+                out = new Point2D(to.getX(), pos);
                 break;
         }
         return out;
