@@ -5,4 +5,10 @@ module com.example.softwaremaintenance {
 
     opens BrickDestroyFX to javafx.fxml;
     exports BrickDestroyFX;
+    exports BrickDestroyFX.Controllers;
+    opens BrickDestroyFX.Controllers to javafx.fxml;
+    exports BrickDestroyFX.View;
+    opens BrickDestroyFX.View to javafx.fxml;
+    exports BrickDestroyFX.Model;
+    opens BrickDestroyFX.Model to javafx.fxml;
 }

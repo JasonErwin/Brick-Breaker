@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" styleClass="bodybg" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BrickDestroyFX.Controller">
+<AnchorPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" styleClass="bodybg" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BrickDestroyFX.Controllers.Controller">
    <children>
       <Button fx:id="startButton" layoutX="81.0" layoutY="286.0" mnemonicParsing="false" onAction="#Start" prefHeight="44.0" prefWidth="74.0" text="START" />
       <Button fx:id="infoButton" layoutX="257.0" layoutY="287.0" mnemonicParsing="false" onAction="#info" prefHeight="44.0" prefWidth="87.0" text="INFO" />
