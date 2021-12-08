@@ -42,11 +42,11 @@ public class DebugController implements Initializable {
     }
 
     @Override
-    public void initialize(URL arg0, ResourceBundle arg1){
+    public void initialize(URL arg0, ResourceBundle arg1) {
         xSlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                newX=(int)xSlider.getValue();
+                newX = (int) xSlider.getValue();
                 wall.setBallXSpeed(newX);
             }
 
@@ -54,7 +54,7 @@ public class DebugController implements Initializable {
         ySlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                newY=(int)ySlider.getValue();
+                newY = (int) ySlider.getValue();
                 wall.setBallYSpeed(newY);
             }
         });

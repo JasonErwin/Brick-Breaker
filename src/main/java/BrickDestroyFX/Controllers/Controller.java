@@ -33,13 +33,13 @@ public class Controller {
     private static final int DEF_WIDTH = 600;
     private static final int DEF_HEIGHT = 450;
 
-    public void logout(ActionEvent event){
-        Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+    public void logout(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Logout");
         alert.setHeaderText("You're about to logout!");
         alert.setContentText("Do you really want to quit?");
 
-        if(alert.showAndWait().get() == ButtonType.OK){
+        if (alert.showAndWait().get() == ButtonType.OK) {
             stage = (Stage) scenePane.getScene().getWindow();
             System.out.println("You successfully logged out from Brick Destroy!");
             stage.close();
@@ -48,7 +48,7 @@ public class Controller {
 
     public void info(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/BrickDestroyFX/info.fxml"));
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
@@ -56,20 +56,20 @@ public class Controller {
 
     public void Back(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/BrickDestroyFX/main.fxml"));
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
     }
 
-    public void Start(ActionEvent event) throws IOException{
-        wall =new Wall(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2,new Point2D(300,430));
-        level=new Level(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2,new Point2D(300,430),wall);
+    public void Start(ActionEvent event) throws IOException {
+        wall = new Wall(new Rectangle(0, 0, DEF_WIDTH, DEF_HEIGHT), 30, 3, 6 / 2, new Point2D(300, 430));
+        level = new Level(new Rectangle(0, 0, DEF_WIDTH, DEF_HEIGHT), 30, 3, 6 / 2, new Point2D(300, 430), wall);
         level.nextLevel();
-        GameBoardModel gameBoardModel= new GameBoardModel();
-        GameBoardView gameBoardView= new GameBoardView(gameBoardModel,wall);
-        GameBoardController gameBoardController=new GameBoardController(gameBoardModel,gameBoardView,level,wall);
-        Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        GameBoardModel gameBoardModel = new GameBoardModel();
+        GameBoardView gameBoardView = new GameBoardView(gameBoardModel, wall);
+        GameBoardController gameBoardController = new GameBoardController(gameBoardModel, gameBoardView, level, wall);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(gameBoardView.getScene());
     }
 }

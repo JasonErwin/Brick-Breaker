@@ -27,54 +27,49 @@ public class GameBoardController {
     private Wall wall;
     private Level level;
 
-    public GameBoardController(GameBoardModel gameBoardModel,GameBoardView gameBoardView,Level level,Wall wall){
-        this.gameBoardModel=gameBoardModel;
-        this.gameBoardView=gameBoardView;
+    public GameBoardController(GameBoardModel gameBoardModel, GameBoardView gameBoardView, Level level, Wall wall) {
+        this.gameBoardModel = gameBoardModel;
+        this.gameBoardView = gameBoardView;
         gameBoardView.paint(gameBoardView.getGc(), gameBoardView.getWall());
-        this.wall=wall;
-        this.level=level;
+        this.wall = wall;
+        this.level = level;
         isKeyPressed(gameBoardView.getCanvas());
         isKeyReleased(gameBoardView.getCanvas());
     }
 
-    AnimationTimer animationTimer= new AnimationTimer()
-    {
+    AnimationTimer animationTimer = new AnimationTimer() {
         @Override
-        public void handle(long currentNanoTime){
+        public void handle(long currentNanoTime) {
             gameBoardView.paint(gameBoardView.getGc(), gameBoardView.getWall());
 
             gameBoardView.getWall().move();
             gameBoardView.getWall().findImpacts();
-            gameBoardModel.setMessage(String.format("Bricks: %d Balls %d",gameBoardView.getWall().getBrickCount(),gameBoardView.getWall().getBallCount()));
-            gameBoardView.getGc().fillText(gameBoardModel.getMessage(),250,225);
+            gameBoardModel.setMessage(String.format("Bricks: %d Balls %d", gameBoardView.getWall().getBrickCount(), gameBoardView.getWall().getBallCount()));
+            gameBoardView.getGc().fillText(gameBoardModel.getMessage(), 250, 225);
 
-            if(gameBoardModel.getInput().equalsIgnoreCase("A")){
+            if (gameBoardModel.getInput().equalsIgnoreCase("A")) {
                 gameBoardView.getWall().getPlayer().moveLeft();
-            }
-            else if (gameBoardModel.getInput().equalsIgnoreCase("D")){
+            } else if (gameBoardModel.getInput().equalsIgnoreCase("D")) {
                 gameBoardView.getWall().getPlayer().movRight();
-            }
-            else{
+            } else {
                 gameBoardView.getWall().getPlayer().stop();
             }
 
-            if(gameBoardView.getWall().isBallLost()){
-                if(gameBoardView.getWall().ballEnd()){
+            if (gameBoardView.getWall().isBallLost()) {
+                if (gameBoardView.getWall().ballEnd()) {
                     gameBoardView.getWall().wallReset();
                     gameBoardModel.setMessage("Game over");
                 }
                 gameBoardView.getWall().ballReset();
                 animationTimer.stop();
-            }
-            else if(gameBoardView.getWall().isDone()){
-                if(level.hasLevel()){
+            } else if (gameBoardView.getWall().isDone()) {
+                if (level.hasLevel()) {
                     gameBoardModel.setMessage("Go to Next Level");
                     animationTimer.stop();
                     gameBoardView.getWall().ballReset();
                     gameBoardView.getWall().wallReset();
                     level.nextLevel();
-                }
-                else{
+                } else {
                     gameBoardModel.setMessage("ALL WALLS DESTROYED");
                     animationTimer.stop();
                 }
@@ -83,19 +78,17 @@ public class GameBoardController {
         }
     };
 
-    public void isKeyPressed(Canvas canvas){
+    public void isKeyPressed(Canvas canvas) {
         canvas.setOnKeyPressed(e -> {
-            if(e.getCode() == KeyCode.A) {
+            if (e.getCode() == KeyCode.A) {
                 gameBoardModel.setInput("A");
-            }
-            else if (e.getCode() ==KeyCode.D){
+            } else if (e.getCode() == KeyCode.D) {
                 gameBoardModel.setInput("D");
-            }
-            else if (e.getCode() == KeyCode.SPACE) {
-                if (gameBoardModel.isRun() == false){
+            } else if (e.getCode() == KeyCode.SPACE) {
+                if (gameBoardModel.isRun() == false) {
                     gameBoardModel.setRun(true);
                     animationTimer.start();
-                } else{
+                } else {
                     if (gameBoardModel.isCheck() == false) {
                         animationTimer.stop();
                         gameBoardModel.setCheck(true);
@@ -104,9 +97,8 @@ public class GameBoardController {
                         gameBoardModel.setCheck(false);
                     }
                 }
-            }
-            else if (e.getCode() == KeyCode.ESCAPE){
-                currentStage=(Stage)((Node)e.getSource()).getScene().getWindow();
+            } else if (e.getCode() == KeyCode.ESCAPE) {
+                currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
                 animationTimer.stop();
                 gameBoardModel.setCheck(true);
                 currentStage.getScene().getRoot().setEffect(new GaussianBlur());
@@ -118,15 +110,14 @@ public class GameBoardController {
                     Scene scene = new Scene(fxmlLoader.load());
                     newStage.setScene(scene);
                     newStage.show();
-                    PauseController pauseController= fxmlLoader.getController();
-                    pauseController.initialize(gameBoardView.getWall(),currentStage,gameBoardView.getGc());
+                    PauseController pauseController = fxmlLoader.getController();
+                    pauseController.initialize(gameBoardView.getWall(), currentStage, gameBoardView.getGc());
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-            }
-            else if(e.getCode() == KeyCode.F1){
-                if(e.isShiftDown() && e.isAltDown())
-                    currentStage=(Stage)((Node)e.getSource()).getScene().getWindow();
+            } else if (e.getCode() == KeyCode.F1) {
+                if (e.isShiftDown() && e.isAltDown())
+                    currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
                 animationTimer.stop();
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/BrickDestroyFX/debug.fxml"));
                 Stage newStage = new Stage();
@@ -136,8 +127,8 @@ public class GameBoardController {
                     Scene scene = new Scene(fxmlLoader.load());
                     newStage.setScene(scene);
                     newStage.show();
-                    DebugController debugController= fxmlLoader.getController();
-                    debugController.initializeDebug(wall,level);
+                    DebugController debugController = fxmlLoader.getController();
+                    debugController.initializeDebug(wall, level);
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -145,7 +136,7 @@ public class GameBoardController {
         });
     }
 
-    public void isKeyReleased(Canvas canvas){
+    public void isKeyReleased(Canvas canvas) {
         canvas.setOnKeyReleased(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {

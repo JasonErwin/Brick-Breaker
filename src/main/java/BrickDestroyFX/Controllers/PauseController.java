@@ -33,38 +33,37 @@ public class PauseController {
     private Stage currentStage;
 
 
-
-    public void initialize(Wall wall , Stage stage, GraphicsContext gc){
-         this.wall=wall;
-         this.stage=stage;
-         this.gc=gc;
+    public void initialize(Wall wall, Stage stage, GraphicsContext gc) {
+        this.wall = wall;
+        this.stage = stage;
+        this.gc = gc;
     }
 
     public void resume(ActionEvent event) {
-        currentStage=(Stage)restartButton.getScene().getWindow();
+        currentStage = (Stage) restartButton.getScene().getWindow();
         currentStage.close();
         stage.getScene().getRoot().setEffect(null);
     }
 
-    public void quit(ActionEvent event){
+    public void quit(ActionEvent event) {
         stage.close();
         stage.getScene().getRoot().setEffect(null);
     }
 
-    public void restart(ActionEvent event){
-       GameBoardModel gameBoardModel= new GameBoardModel();
-       GameBoardView gameBoardView= new GameBoardView(gameBoardModel,wall);
+    public void restart(ActionEvent event) {
+        GameBoardModel gameBoardModel = new GameBoardModel();
+        GameBoardView gameBoardView = new GameBoardView(gameBoardModel, wall);
         wall.ballReset();
         wall.wallReset();
         gameBoardView.repaint();
-        currentStage=(Stage)restartButton.getScene().getWindow();
+        currentStage = (Stage) restartButton.getScene().getWindow();
         currentStage.close();
         stage.getScene().getRoot().setEffect(null);
     }
 
-    public void isKeyPressed(KeyEvent keyEvent){
-        if(keyEvent.getCode() == KeyCode.ESCAPE){
-            currentStage=(Stage)restartButton.getScene().getWindow();
+    public void isKeyPressed(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ESCAPE) {
+            currentStage = (Stage) restartButton.getScene().getWindow();
             currentStage.close();
             stage.getScene().getRoot().setEffect(null);
         }
