@@ -5,7 +5,7 @@ import javafx.geometry.Point2D;
 import javafx.scene.shape.Rectangle;
 
 public class Level {
-    private static final int LEVELS_COUNT = 4;
+    private static final int LEVELS_COUNT = 6;
 
     Brick[] bricks;
     private Brick[][] levels;
@@ -112,6 +112,8 @@ public class Level {
         tmp[1] = makeChessboardLevel(drawArea, brickCount, lineCount, brickDimensionRatio, "CLAY", "CEMENT");
         tmp[2] = makeChessboardLevel(drawArea, brickCount, lineCount, brickDimensionRatio, "CLAY", "STEEL");
         tmp[3] = makeChessboardLevel(drawArea, brickCount, lineCount, brickDimensionRatio, "STEEL", "CEMENT");
+        tmp[4] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio, "CEMENT");
+        tmp[5] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio, "STEEL");
         return tmp;
     } //call levels after generation.
 
