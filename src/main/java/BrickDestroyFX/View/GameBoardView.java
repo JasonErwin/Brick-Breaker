@@ -7,9 +7,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Path;
 
-/**
- * GameBoardView Class
- */
 public class GameBoardView {
 
     private GameBoardModel gameBoardModel;
@@ -19,11 +16,6 @@ public class GameBoardView {
     private GraphicsContext gc;
     private Wall wall;
 
-    /**
-     * define gameboardview properties
-     * @param gameBoardModel gameboardmodel
-     * @param wall game logic
-     */
     public GameBoardView(GameBoardModel gameBoardModel, Wall wall) {
         this.wall = wall;
         this.gameBoardModel = gameBoardModel;
@@ -33,11 +25,6 @@ public class GameBoardView {
 
     }
 
-    /**
-     * method to paint
-     * @param gc graphic context
-     * @param wall gamelogic
-     */
     public void paint(GraphicsContext gc, Wall wall) {
         gc.clearRect(0, 0, 600, 450);
 
@@ -76,17 +63,11 @@ public class GameBoardView {
         gc.strokeRect(brick.getX(), brick.getY(), brick.getWidth(), brick.getHeight());
     } //method to draw the border and inside of the bricks
 
-    /**
-     * retrieve canvas
-     * @return canvas
-     */
+
     public Canvas getCanvas() {
         return canvas;
     }
 
-    /**
-     * repaint the canvas
-     */
     public void repaint() {
         paint(gc, wall);
     }
@@ -117,26 +98,14 @@ public class GameBoardView {
         }
     }
 
-    /**
-     * retrieve scene
-     * @return new scene
-     */
     public Scene getScene() {
         return new Scene(new Pane(canvas));
     }
 
-    /**
-     * retrieve GC
-     * @return GC
-     */
     public GraphicsContext getGc() {
         return gc;
     }
 
-    /**
-     * retrieve wall
-     * @return wall
-     */
     public Wall getWall() {
         return wall;
     }

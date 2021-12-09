@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.example.softwaremaintenance","l":"BrickDestroyFX"},{"m":"com.example.softwaremaintenance","l":"BrickDestroyFX.Controllers"},{"m":"com.example.softwaremaintenance","l":"BrickDestroyFX.Model"},{"m":"com.example.softwaremaintenance","l":"BrickDestroyFX.View"}];updateSearchResults();
