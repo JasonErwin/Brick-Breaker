@@ -14,6 +14,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+/**
+ * Pause Menu Controller
+ */
 public class PauseController {
 
     @FXML
@@ -33,23 +36,41 @@ public class PauseController {
     private Stage currentStage;
 
 
+    /**
+     * Initialize Pause Menu
+     * @param wall game logic
+     * @param stage stage being shown
+     * @param gc GraphicsContext
+     */
     public void initialize(Wall wall, Stage stage, GraphicsContext gc) {
         this.wall = wall;
         this.stage = stage;
         this.gc = gc;
     }
 
+    /**
+     * Resume Button Functionality
+     * @param event on mouse clicked
+     */
     public void resume(ActionEvent event) {
         currentStage = (Stage) restartButton.getScene().getWindow();
         currentStage.close();
         stage.getScene().getRoot().setEffect(null);
     }
 
+    /**
+     * Quit Button Functionality
+     * @param event on mouse clicked
+     */
     public void quit(ActionEvent event) {
         stage.close();
         stage.getScene().getRoot().setEffect(null);
     }
 
+    /**
+     * Restart Button Functionality
+     * @param event on mouse clicked
+     */
     public void restart(ActionEvent event) {
         GameBoardModel gameBoardModel = new GameBoardModel();
         GameBoardView gameBoardView = new GameBoardView(gameBoardModel, wall);
@@ -61,6 +82,10 @@ public class PauseController {
         stage.getScene().getRoot().setEffect(null);
     }
 
+    /**
+     * Method to check is Escape Key Pressed
+     * @param keyEvent on key pressed
+     */
     public void isKeyPressed(KeyEvent keyEvent) {
         if (keyEvent.getCode() == KeyCode.ESCAPE) {
             currentStage = (Stage) restartButton.getScene().getWindow();

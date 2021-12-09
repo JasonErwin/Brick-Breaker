@@ -19,6 +19,9 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
+/**
+ * Act as Controller for Game Board in MVC
+ */
 public class GameBoardController {
 
     private GameBoardModel gameBoardModel;
@@ -27,6 +30,13 @@ public class GameBoardController {
     private Wall wall;
     private Level level;
 
+    /**
+     * Define Game Board Controller Properties
+     * @param gameBoardModel GameBoardModel from MVC
+     * @param gameBoardView GameBoardView from MVC
+     * @param level level generation
+     * @param wall game logic
+     */
     public GameBoardController(GameBoardModel gameBoardModel, GameBoardView gameBoardView, Level level, Wall wall) {
         this.gameBoardModel = gameBoardModel;
         this.gameBoardView = gameBoardView;
@@ -78,6 +88,10 @@ public class GameBoardController {
         }
     };
 
+    /**
+     * Method to chcek is any key pressed
+     * @param canvas place being drawn
+     */
     public void isKeyPressed(Canvas canvas) {
         canvas.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.A) {
@@ -136,6 +150,10 @@ public class GameBoardController {
         });
     }
 
+    /**
+     * Check is any key released
+     * @param canvas place being drawn.
+     */
     public void isKeyReleased(Canvas canvas) {
         canvas.setOnKeyReleased(new EventHandler<KeyEvent>() {
             @Override

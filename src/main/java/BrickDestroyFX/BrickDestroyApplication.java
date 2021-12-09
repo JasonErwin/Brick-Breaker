@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Main Class to Load  Brick Destroy
+ */
     public class BrickDestroyApplication extends Application {
         @Override
         public void start(Stage stage) throws IOException {
@@ -20,7 +23,8 @@ import java.io.IOException;
             stage.show();
         }
 
-        public static void main(String[] args) {
+
+    public static void main(String[] args) {
             launch();
         }
     }
