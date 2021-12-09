@@ -22,7 +22,7 @@
             <Font name="Comic Sans MS" size="17.0" />
          </font>
       </Button>
-      <Text fill="#363130" layoutX="150.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pause Menu" textAlignment="CENTER">
+      <Text fill="#d0dabb" layoutX="150.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pause Menu" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="56.0" />
          </font>
