@@ -4,6 +4,9 @@ import javafx.geometry.Dimension2D;
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Rectangle;
 
+/**
+ * Level class that holds properties to make levels.
+ */
 public class Level {
     private static final int LEVELS_COUNT = 6;
 
@@ -14,12 +17,30 @@ public class Level {
     private int brickCount;
     private BrickFactory brickFactory;
 
+    /**
+     * define level properties
+     * @param drawArea place to draw blocks
+     * @param brickCount number of bricks
+     * @param lineCount number of lines
+     * @param brickDimensionRatio brick dimension ratio
+     * @param ballPos x and y position of the ball
+     * @param wall retrieve game logic
+     */
     public Level(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point2D ballPos, Wall wall) {
         levels = makeLevels(drawArea, brickCount, lineCount, brickDimensionRatio);
         this.wall = wall;
         this.brickCount = brickCount;
     }
 
+    /**
+     * Method to define the first level.
+     * @param drawArea araw where the bricks will be drawn
+     * @param brickCnt number of bricks
+     * @param lineCnt number of line
+     * @param brickSizeRatio bricksizeRatio
+     * @param type type of brick
+     * @return level 1 created
+     */
     private Brick[] makeSingleTypeLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, String type) {
         /*
           if brickCount is not divisible by line count,brickCount is adjusted to the biggest
@@ -106,6 +127,14 @@ public class Level {
         return tmp;
     } // generate level 2,3,4
 
+    /**
+     * Method to define what brick to be made in what level.
+     * @param drawArea place to draw
+     * @param brickCount number of brick
+     * @param lineCount number of lines
+     * @param brickDimensionRatio brickdimensionratio
+     * @return the level to be created
+     */
     public Brick[][] makeLevels(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio) {
         Brick[][] tmp = new Brick[LEVELS_COUNT][];
         tmp[0] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio, "CLAY");
@@ -117,12 +146,18 @@ public class Level {
         return tmp;
     } //call levels after generation.
 
-
+    /**
+     *Goes to Next level
+     */
     public void nextLevel() {
         wall.setBricks(levels[level++]);
         wall.setBrickCount(wall.getBricks().length);
     } // method to increase level
 
+    /**
+     * Check whether is there any level after this
+     * @return whether there is a new level or not
+     */
     public boolean hasLevel() {
         return level < levels.length;
     } //method to see whather it has reach the last level

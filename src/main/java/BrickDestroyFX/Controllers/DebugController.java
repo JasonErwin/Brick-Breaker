@@ -12,6 +12,9 @@ import javafx.scene.control.Slider;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Defines Debug Controller
+ */
 public class DebugController implements Initializable {
 
     @FXML
@@ -26,21 +29,37 @@ public class DebugController implements Initializable {
     private int newX;
     private int newY;
 
+    /**
+     * Initialize debug
+     * @param wall game logic
+     * @param level what level to load
+     */
     public void initializeDebug(Wall wall, Level level) {
         this.wall = wall;
         this.level = level;
     }
 
+    /**
+     * Reset Balls
+     * @param event once clicked
+     */
     public void reset(ActionEvent event) {
         wall.resetBallCount();
     }
 
+    /**
+     * Skip Level
+     * @param event once clicked
+     */
     public void skip(ActionEvent event) {
         if (level.hasLevel()) {
             level.nextLevel();
         }
     }
 
+    /**
+     *Get and initialize x and y speed
+     */
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         xSlider.valueProperty().addListener(new ChangeListener<Number>() {

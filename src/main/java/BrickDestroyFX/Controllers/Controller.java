@@ -19,6 +19,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Main Menu Controller
+ */
 public class Controller {
 
     @FXML
@@ -33,6 +36,10 @@ public class Controller {
     private static final int DEF_WIDTH = 600;
     private static final int DEF_HEIGHT = 450;
 
+    /**
+     * Define logout Button Functionality
+     * @param event if clicked
+     */
     public void logout(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Logout");
@@ -46,6 +53,11 @@ public class Controller {
         }
     }
 
+    /**
+     * define info button functionality
+     * @param event once clicked
+     * @throws IOException make sure button is clicked
+     */
     public void info(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/BrickDestroyFX/info.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -54,6 +66,11 @@ public class Controller {
         stage.show();
     }
 
+    /**
+     * Back Button Functionality
+     * @param event mouse clicked
+     * @throws IOException make sure button is clicked
+     */
     public void Back(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/BrickDestroyFX/main.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -62,6 +79,11 @@ public class Controller {
         stage.show();
     }
 
+    /**
+     * Star Button Functionality
+     * @param event once clicked
+     * @throws IOException exception if not clicked
+     */
     public void Start(ActionEvent event) throws IOException {
         wall = new Wall(new Rectangle(0, 0, DEF_WIDTH, DEF_HEIGHT), 30, 3, 6 / 2, new Point2D(300, 430));
         level = new Level(new Rectangle(0, 0, DEF_WIDTH, DEF_HEIGHT), 30, 3, 6 / 2, new Point2D(300, 430), wall);
@@ -73,6 +95,11 @@ public class Controller {
         stage.setScene(gameBoardView.getScene());
     }
 
+    /**
+     * Display High score
+     * @param event once clicked
+     * @throws IOException exception if not clicked
+     */
     public void highscore(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/BrickDestroyFX/High Score.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -81,6 +108,11 @@ public class Controller {
         stage.show();
     }
 
+    /**
+     * Back button functionality
+     * @param event if clicked
+     * @throws IOException exception if not clicked
+     */
     public void back2(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/BrickDestroyFX/main.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -19,6 +19,9 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
+/**
+ * Define GameBoard Controller
+ */
 public class GameBoardController {
 
     private GameBoardModel gameBoardModel;
@@ -27,6 +30,13 @@ public class GameBoardController {
     private Wall wall;
     private Level level;
 
+    /**
+     * Define GameBoardController Propery
+     * @param gameBoardModel  passes Variables
+     * @param gameBoardView Handles UI
+     * @param level level to be load
+     * @param wall game logic
+     */
     public GameBoardController(GameBoardModel gameBoardModel, GameBoardView gameBoardView, Level level, Wall wall) {
         this.gameBoardModel = gameBoardModel;
         this.gameBoardView = gameBoardView;
@@ -36,6 +46,7 @@ public class GameBoardController {
         isKeyPressed(gameBoardView.getCanvas());
         isKeyReleased(gameBoardView.getCanvas());
     }
+
 
     AnimationTimer animationTimer = new AnimationTimer() {
         @Override
@@ -78,6 +89,10 @@ public class GameBoardController {
         }
     };
 
+    /**
+     * Check whether key is pressed
+     * @param canvas canvas
+     */
     public void isKeyPressed(Canvas canvas) {
         canvas.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.A) {
@@ -136,6 +151,10 @@ public class GameBoardController {
         });
     }
 
+    /**
+     * check whehter key is released
+     * @param canvas canvas
+     */
     public void isKeyReleased(Canvas canvas) {
         canvas.setOnKeyReleased(new EventHandler<KeyEvent>() {
             @Override

@@ -14,6 +14,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+/**
+ * Define Pause Menu Functionality
+ */
 public class PauseController {
 
     @FXML
@@ -32,24 +35,41 @@ public class PauseController {
     private GraphicsContext gc;
     private Stage currentStage;
 
-
+    /**
+     * Initialize pause controller
+     * @param wall game logic
+     * @param stage which stage to display
+     * @param gc graphicscontext
+     */
     public void initialize(Wall wall, Stage stage, GraphicsContext gc) {
         this.wall = wall;
         this.stage = stage;
         this.gc = gc;
     }
 
+    /**
+     * Continue Game
+     * @param event on clicked
+     */
     public void resume(ActionEvent event) {
         currentStage = (Stage) restartButton.getScene().getWindow();
         currentStage.close();
         stage.getScene().getRoot().setEffect(null);
     }
 
+    /**
+     * Quit Game
+     * @param event on clicked
+     */
     public void quit(ActionEvent event) {
         stage.close();
         stage.getScene().getRoot().setEffect(null);
     }
 
+    /**
+     * Restart Level
+     * @param event on clicked
+     */
     public void restart(ActionEvent event) {
         GameBoardModel gameBoardModel = new GameBoardModel();
         GameBoardView gameBoardView = new GameBoardView(gameBoardModel, wall);

@@ -9,6 +9,9 @@ import javafx.scene.shape.Shape;
 
 import java.util.Random;
 
+/**
+ * Crack  for Cement
+ */
 public class Crack {
     private static final int CRACK_SECTIONS = 3;
     private static final double JUMP_PROBABILITY = 0.7;
@@ -26,7 +29,11 @@ public class Crack {
     private int crackDepth;
     private int steps;
 
-
+    /**
+     * Define Crack Property
+     * @param crackDepth should te brick crack
+     * @param steps number of steps
+     */
     public Crack(int crackDepth, int steps) {
         crack = new Path();
         this.crackDepth = crackDepth;
@@ -35,15 +42,28 @@ public class Crack {
 
     } //constructor to instantiate crack properties when it is called, used by cement
 
+    /**
+     * Draw the crack
+     * @return crack
+     */
     public Path draw() {
 
         return crack;
     } // method to return crack, used in cement
 
+    /**
+     * reset the crack
+     */
     public void reset() {
         crack.getElements().clear();
     } //method to remove te crack icon from bricks, Used in cement brick
 
+    /**
+     * Make it crack at a specific point based on direction
+     * @param point x and y coordinates
+     * @param direction which direction
+     * @param brickFace get the brickface of the brick.
+     */
     public void makeCrack(Point2D point, int direction, Shape brickFace) {
         Bounds bounds = brickFace.getBoundsInParent();
 
@@ -84,6 +104,11 @@ public class Crack {
         }
     } // method to crack the brick
 
+    /**
+     * Make brick crack
+     * @param start x and y coordinate of the start
+     * @param end x and y coordinate of the end
+     */
     protected void makeCrack(Point2D start, Point2D end) {
 
         Path path = new Path();
