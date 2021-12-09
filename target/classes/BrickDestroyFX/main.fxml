@@ -12,8 +12,8 @@
 <AnchorPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" styleClass="bodybg" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BrickDestroyFX.Controllers.Controller">
    <children>
       <Button fx:id="startButton" layoutX="81.0" layoutY="286.0" mnemonicParsing="false" onAction="#Start" prefHeight="44.0" prefWidth="74.0" text="START" />
-      <Button fx:id="infoButton" layoutX="257.0" layoutY="287.0" mnemonicParsing="false" onAction="#info" prefHeight="44.0" prefWidth="87.0" text="INFO" />
-      <Button fx:id="logoutButton" layoutX="440.0" layoutY="286.0" mnemonicParsing="false" onAction="#logout" prefHeight="44.0" prefWidth="67.0" text="EXIT" />
+      <Button fx:id="infoButton" layoutX="199.0" layoutY="286.0" mnemonicParsing="false" onAction="#info" prefHeight="44.0" prefWidth="87.0" text="INFO" />
+      <Button fx:id="logoutButton" layoutX="460.0" layoutY="286.0" mnemonicParsing="false" onAction="#logout" prefHeight="44.0" prefWidth="67.0" text="EXIT" />
       <Text layoutX="133.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO " wrappingWidth="375.35302734375">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="48.0" />
@@ -40,6 +40,7 @@
             <Font name="Comic Sans MS Bold Italic" size="48.0" />
          </font>
       </Text>
+      <Button fx:id="highscoreButton" layoutX="335.0" layoutY="286.0" mnemonicParsing="false" onAction="#highscore" prefHeight="44.0" prefWidth="87.0" text="HIGH SCORE" />
    </children>
    <stylesheets>
       <URL value="@style.css" />
