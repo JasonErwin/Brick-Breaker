@@ -4,6 +4,9 @@ import javafx.geometry.Dimension2D;
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Rectangle;
 
+/**
+ * Level Generation Class
+ */
 public class Level {
     private static final int LEVELS_COUNT = 6;
 
@@ -14,6 +17,15 @@ public class Level {
     private int brickCount;
     private BrickFactory brickFactory;
 
+    /**
+     * Define Level Properties
+     * @param drawArea area to draw level
+     * @param brickCount number of bricks;
+     * @param lineCount number of lines;
+     * @param brickDimensionRatio  brickDimensionRatio
+     * @param ballPos x and y coordinates of the ball
+     * @param wall game logic
+     */
     public Level(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point2D ballPos, Wall wall) {
         levels = makeLevels(drawArea, brickCount, lineCount, brickDimensionRatio);
         this.wall = wall;
@@ -106,6 +118,14 @@ public class Level {
         return tmp;
     } // generate level 2,3,4
 
+    /**
+     * Generate a specific level
+     * @param drawArea area for level to be drawn
+     * @param brickCount number of bricks
+     * @param lineCount number of lines
+     * @param brickDimensionRatio brickDimesionRate
+     * @return Level that is required to be generated
+     */
     public Brick[][] makeLevels(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio) {
         Brick[][] tmp = new Brick[LEVELS_COUNT][];
         tmp[0] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio, "CLAY");
@@ -118,11 +138,18 @@ public class Level {
     } //call levels after generation.
 
 
+    /**
+     * Method to go to the next level.
+     */
     public void nextLevel() {
         wall.setBricks(levels[level++]);
         wall.setBrickCount(wall.getBricks().length);
     } // method to increase level
 
+    /**
+     * Method to check is there another level
+     * @return true as long as there is a level, if no level false
+     */
     public boolean hasLevel() {
         return level < levels.length;
     } //method to see whather it has reach the last level

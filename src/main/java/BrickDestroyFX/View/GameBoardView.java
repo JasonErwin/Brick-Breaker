@@ -7,6 +7,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Path;
 
+/**
+ * Act as View for Game Board in MVC
+ */
 public class GameBoardView {
 
     private GameBoardModel gameBoardModel;
@@ -16,6 +19,11 @@ public class GameBoardView {
     private GraphicsContext gc;
     private Wall wall;
 
+    /**
+     * Define GameBoardView Properties
+     * @param gameBoardModel GameBoardModel from mvc
+     * @param wall Game Logic
+     */
     public GameBoardView(GameBoardModel gameBoardModel, Wall wall) {
         this.wall = wall;
         this.gameBoardModel = gameBoardModel;
@@ -25,6 +33,11 @@ public class GameBoardView {
 
     }
 
+    /**
+     * Method for painting the canvas
+     * @param gc Graphics Context
+     * @param wall game logic
+     */
     public void paint(GraphicsContext gc, Wall wall) {
         gc.clearRect(0, 0, 600, 450);
 
@@ -64,10 +77,17 @@ public class GameBoardView {
     } //method to draw the border and inside of the bricks
 
 
+    /**
+     * retrieve Canvas
+     * @return canvas to be passed to controller
+     */
     public Canvas getCanvas() {
         return canvas;
     }
 
+    /**
+     * Method to repaint the canvas
+     */
     public void repaint() {
         paint(gc, wall);
     }
@@ -98,14 +118,26 @@ public class GameBoardView {
         }
     }
 
+    /**
+     * Method the retrieve the scene
+     * @return Scene to controller
+     */
     public Scene getScene() {
         return new Scene(new Pane(canvas));
     }
 
+    /**
+     * Retrieve GraphicsContext
+     * @return GrpagicsContext to controller
+     */
     public GraphicsContext getGc() {
         return gc;
     }
 
+    /**
+     * retrieve wall
+     * @return wall to controller
+     */
     public Wall getWall() {
         return wall;
     }
