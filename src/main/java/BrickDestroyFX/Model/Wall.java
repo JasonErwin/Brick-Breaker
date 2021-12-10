@@ -19,6 +19,10 @@ public class Wall {
     private Point2D startPoint;
 
     private int brickCount;
+
+    int speedX;
+    int speedY;
+
     private int ballCount;
     private boolean ballLost;
 
@@ -41,7 +45,7 @@ public class Wall {
         rnd = new Random();
 
         makeBall(ballPos);
-        int speedX,speedY;
+
         do{
             speedX = rnd.nextInt(5) - 2;
         }while(speedX == 0);
@@ -267,5 +271,11 @@ public class Wall {
     public void setBrickCount(int brickCount) {
         this.brickCount = brickCount;
     }
+
+    public void setBallCount(int ballCount) {
+        this.ballCount = ballCount;
+    }
+
+
 }
 

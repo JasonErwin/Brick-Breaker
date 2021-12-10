@@ -106,6 +106,14 @@ public class Player {
         playerFace.setY(ballPoint.getY());
     }
 
+    public void setMoveAmount(int moveAmount) {
+        this.moveAmount = moveAmount;
+    }
+
+    public int getMoveAmount() {
+        return moveAmount;
+    }
+
     /**
      * Method to get player x coordinates
      * @return player x coordinates
@@ -134,8 +142,8 @@ public class Player {
      * Retrieve player width
      * @return player width
      */
-    public int getWidth() {
-        return width;
+    public double getWidth() {
+        return playerFace.getWidth();
     }
 }
 
