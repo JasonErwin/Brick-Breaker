@@ -54,7 +54,7 @@ public class GameBoardController {
 
             gameBoardView.getWall().move();
             gameBoardView.getWall().findImpacts();
-            gameBoardModel.setMessage(String.format("Bricks: %d Balls %d", gameBoardView.getWall().getBrickCount(), gameBoardView.getWall().getBallCount()));
+            gameBoardModel.setMessage(String.format("Bricks: %d Balls %d Score: %d", gameBoardView.getWall().getBrickCount(), gameBoardView.getWall().getBallCount(),gameBoardView.getWall().getScore()));
             gameBoardView.getGc().fillText(gameBoardModel.getMessage(), 250, 225);
 
             if (gameBoardModel.getInput().equalsIgnoreCase("A")) {

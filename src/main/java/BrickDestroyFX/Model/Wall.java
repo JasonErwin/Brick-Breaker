@@ -20,6 +20,10 @@ public class Wall {
 
     private int brickCount;
 
+
+
+    private int score;
+
     int speedX;
     int speedY;
 
@@ -92,6 +96,7 @@ public class Wall {
              * because for every brick program checks for horizontal and vertical impacts
              */
             brickCount--;
+            increaseScore();
         }
         else if(impactBorder()) {
             ball.reverseX();
@@ -276,6 +281,15 @@ public class Wall {
         this.ballCount = ballCount;
     }
 
+    public int getScore() {
+        return score;
+    }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
+    public int increaseScore(){
+        return score+=10;
+    }
 }
 
