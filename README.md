@@ -20,28 +20,28 @@ Convert GameBoard into GameBoardModel , GameBoardView and GameBoardControl respe
 Arrange BrickDestroyFX Application into MVC patterns. Reasoning is same as above.
 
 ### JUnit Tests (10%)
-####GameBoardView Class 
+###GameBoardView Class 
 getWall() Method.
 
-####CementBrick Class 
+###CementBrick Class 
 repair() Method.
 
-####Crack Class 
+###Crack Class 
 draw(), reset(), makeCrack() Methods.
 
-####GameBoardModel Class 
+###GameBoardModel Class 
 isCheck(), getMessage(), setMessage(), getInput(), setInput(), isRun(), setRun(), setCheck() Methods.
 
-####Level Class 
+###Level Class 
 nextLevel(), hasLevel() Methods.
 
-####Player Class 
+###Player Class 
 moveLeft(), movRight(), stop(), getWidth(), getHeight(), getX(), getY(), moveTo() Methods.
 
-####SteelBrick Class
+###SteelBrick Class
 impact() Method.
 
-####Wall Class 
+###Wall Class 
 move(), getBrickCount(), resetBallCount(), isBallLost(),isDone(), isBallEnd(),getBallCount(), impactBorder(),setBallCount() , setBrickCount(), setBallXSpeed(), setBallYSpeed(),makeBall(),ballReset(),wallReset() Methods.
 
 ### Maven (2%)
