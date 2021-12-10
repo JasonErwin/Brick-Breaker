@@ -2,7 +2,6 @@ package BrickDestroyFX.Model;
 
 import javafx.geometry.Dimension2D;
 import javafx.geometry.Point2D;
-import javafx.scene.shape.Rectangle;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;

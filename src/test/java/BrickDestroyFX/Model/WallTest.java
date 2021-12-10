@@ -114,6 +114,6 @@ class WallTest {
         wall.ballReset();
         assertEquals(new Point2D(0, 0), ball.getPosition());
     }
-
-
 }
+
+
