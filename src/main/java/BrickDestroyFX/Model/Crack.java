@@ -16,11 +16,29 @@ public class Crack {
     private static final int CRACK_SECTIONS = 3;
     private static final double JUMP_PROBABILITY = 0.7;
 
+    /**
+     * Left crack has ID 10
+     */
     public static final int LEFT = 10;
+    /**
+     * Right Crack has ID 20
+     */
     public static final int RIGHT = 20;
+    /**
+     * Up crack has ID 30
+     */
     public static final int UP = 30;
+    /**
+     * Down Crack has id 40
+     */
     public static final int DOWN = 40;
+    /**
+     * Vertical crack has ID 100
+     */
     public static final int VERTICAL = 100;
+    /**
+     * Horizontal crack has ID 200
+     */
     public static final int HORIZONTAL = 200;
     private static Random rnd;
     Shape brickFace;

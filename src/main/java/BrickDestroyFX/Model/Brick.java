@@ -13,13 +13,34 @@ import java.util.Random;
  * Define General Properties of Bricks , Will be used by Clay,Cement and Cement Bricks.
  */
 abstract public class Brick {
+    /**
+     * Set minimum number times to crack brick at 1
+     */
     public static final int MIN_CRACK = 1;
+    /**
+     * Crack Depth is set at 1
+     */
     public static final int DEF_CRACK_DEPTH = 1;
+    /**
+     * Steps for bricks set at 35
+     */
     public static final int DEF_STEPS = 35;
 
+    /**
+     * brick up impact set at 100
+     */
     public static final int UP_IMPACT = 100;
+    /**
+     * Brick down impact set at 200
+     */
     public static final int DOWN_IMPACT = 200;
+    /**
+     * brick left impact set at 300
+     */
     public static final int LEFT_IMPACT = 300;
+    /**
+     * Brick right impact set at 400
+     */
     public static final int RIGHT_IMPACT = 400;
 
     private static Random rnd;

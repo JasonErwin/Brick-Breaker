@@ -59,6 +59,9 @@ abstract public class Ball {
      */
     protected abstract Shape makeBall(Point2D center, int radiusA, int radiusB); //abstract class to makeBall, Used by Rubber Ball
 
+    /**
+     * Method that controls the ball's movement
+     */
     public void move() {
         Circle tmp;
         center = new Point2D((center.getX() + speedX), (center.getY() + speedY));

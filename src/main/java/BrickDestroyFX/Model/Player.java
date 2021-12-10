@@ -9,7 +9,13 @@ import javafx.scene.shape.Shape;
  * Player Properties
  */
 public class Player {
+    /**
+     * Player model border is dark green
+     */
     public final Color BORDER_COLOR = Color.GREEN.darker().darker();
+    /**
+     * Player model inner is light green
+     */
     public final Color INNER_COLOR = Color.GREEN;
 
     private static final int DEF_MOVE_AMOUNT = 5;

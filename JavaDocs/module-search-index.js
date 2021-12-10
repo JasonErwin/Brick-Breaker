@@ -1,1 +1,1 @@
-moduleSearchIndex = [{"l":"com.example.softwaremaintenance"}];updateSearchResults();
+moduleSearchIndex = [];updateSearchResults();
