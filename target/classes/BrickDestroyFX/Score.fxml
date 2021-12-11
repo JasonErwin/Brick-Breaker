@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#menu" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BrickDestroyFX.Controllers.ScoreController">
+   <children>
+      <ListView fx:id="highScoreNames" layoutX="1.0" layoutY="82.0" prefHeight="366.0" prefWidth="285.0" />
+      <ListView fx:id="highScorePoints" layoutX="286.0" layoutY="82.0" prefHeight="366.0" prefWidth="315.0" />
+      <Text layoutX="151.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HIGH SCORES">
+         <font>
+            <Font name="Comic Sans MS" size="40.0" />
+         </font>
+      </Text>
+      <Button fx:id="menu" layoutX="493.0" layoutY="24.0" mnemonicParsing="false" onAction="#menu" prefHeight="35.0" prefWidth="88.0" text="Main Menu" />
+   </children>
+</AnchorPane>

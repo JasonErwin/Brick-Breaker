@@ -100,24 +100,13 @@ public class Controller {
      * @param event on mouse clicked
      * @throws IOException exception to be done if no action can be undertaken .
      */
-    public void highscore(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/BrickDestroyFX/High Score.fxml"));
+    public void score(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/BrickDestroyFX/Score.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
     }
 
-    /**
-     * Back button for High Score Scene
-     * @param event on mouse clicked
-     * @throws IOException exception to be called if no action can be undertaken.
-     */
-    public void back2(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/BrickDestroyFX/main.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.show();
-    }
+
 }

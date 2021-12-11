@@ -146,6 +146,20 @@ public class GameBoardController {
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
+            } else if(e.getCode() == KeyCode.R){
+                animationTimer.stop();
+               Stage currentStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+               FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("/BrickDestroyFX/Score.fxml"));
+               Stage highScoreStage= new Stage();
+               try{
+                   Scene scene=new Scene(fxmlLoader.load());
+                   highScoreStage.setScene(scene);
+               }catch (IOException ioException){
+                   ioException.printStackTrace();
+               }
+               highScoreStage.initModality(Modality.APPLICATION_MODAL);
+               highScoreStage.initOwner(currentStage);
+               highScoreStage.show();
             }
         });
     }

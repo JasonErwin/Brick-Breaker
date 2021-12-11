@@ -40,7 +40,7 @@
             <Font name="Comic Sans MS Bold Italic" size="48.0" />
          </font>
       </Text>
-      <Button fx:id="highscoreButton" layoutX="335.0" layoutY="286.0" mnemonicParsing="false" onAction="#highscore" prefHeight="44.0" prefWidth="87.0" text="HIGH SCORE" />
+      <Button fx:id="score" layoutX="335.0" layoutY="286.0" mnemonicParsing="false" onAction="#score" prefHeight="44.0" prefWidth="87.0" text="HIGH SCORE" />
    </children>
    <stylesheets>
       <URL value="@style.css" />

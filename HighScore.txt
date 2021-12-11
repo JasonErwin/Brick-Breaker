@@ -1,0 +1,3 @@
+James , 1000
+Victor , 750
+Jack , 500
