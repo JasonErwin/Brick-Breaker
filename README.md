@@ -58,7 +58,11 @@ Use Maven as it can add all dependencies required for the project automatically 
 ## Addition 
 
 ### <ins>Score (10%)</ins>
-Implemented scoring into to game by destroying bricks. High Score can be seen in the Main Menu.
+Implemented scoring into to game by destroying bricks. 
+
+Added a button to show high score in main menu by reading a prepared txt file.
+
+User is able to press "R" on the keyboard to have a High Score Pop Up to appear in game.
 
 ### <ins>Additional Playable Level(5%)</ins>
 Added two levels made of all steel and cement brick respectively.

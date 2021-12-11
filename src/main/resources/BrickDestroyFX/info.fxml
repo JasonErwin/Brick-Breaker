@@ -19,7 +19,7 @@
       <Button layoutX="408.0" layoutY="109.0" mnemonicParsing="false" text="Shift" />
       <Button layoutX="463.0" layoutY="109.0" mnemonicParsing="false" text="F1" />
       <Button layoutX="398.0" layoutY="202.0" mnemonicParsing="false" text="SpaceBar" />
-      <Button fx:id="backButton" layoutX="433.0" layoutY="328.0" mnemonicParsing="false" onAction="#Back" prefHeight="32.0" prefWidth="64.0" text="BACK" />
+      <Button fx:id="backButton" layoutX="268.0" layoutY="372.0" mnemonicParsing="false" onAction="#Back" prefHeight="32.0" prefWidth="64.0" text="BACK" />
       <Text fill="#d0dabb" layoutX="395.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+" wrappingWidth="33.0" />
       <Text fill="#d0dabb" layoutX="451.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+" />
       <Text fill="#d0dabb" layoutX="115.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Move Left">
@@ -42,5 +42,11 @@
          <font>
             <Font size="22.0" />
          </font></Text>
+      <Button layoutX="419.0" layoutY="303.0" mnemonicParsing="false" text="R" />
+      <Text fill="#d0dabb" layoutX="348.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="High Score Pop Up">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
