@@ -23,7 +23,10 @@ import java.io.IOException;
             stage.show();
         }
 
-
+    /**
+     * Method to run the application
+     * @param args arguments
+     */
     public static void main(String[] args) {
             launch();
         }

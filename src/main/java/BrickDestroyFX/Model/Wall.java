@@ -277,17 +277,34 @@ public class Wall {
         this.brickCount = brickCount;
     }
 
+    /**
+     *Set ballcount to a specific value
+     * @param ballCount number of balls in the game
+     */
     public void setBallCount(int ballCount) {
         this.ballCount = ballCount;
     }
 
+    /**
+     * a method to get score
+     * @return score after destroying brick
+     */
     public int getScore() {
         return score;
     }
 
+    /**
+     * Set the score for brick destroy game
+     * @param score score after destroying brick
+     */
     public void setScore(int score) {
         this.score = score;
     }
+
+    /**
+     * Method to increase score
+     * @return score +10
+     */
     public int increaseScore(){
         return score+=10;
     }

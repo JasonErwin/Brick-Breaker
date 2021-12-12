@@ -59,8 +59,8 @@ public class DebugController implements Initializable {
 
     /**
      * Initialize and  set values from slider to x and y speed for ball
-     * @param arg0
-     * @param arg1
+     * @param arg0 uniform resource locator
+     * @param arg1 contains locale-specific objects
      */
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {

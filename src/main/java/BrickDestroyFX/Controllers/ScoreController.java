@@ -16,6 +16,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Class that controls High Score Functionalities
+ */
 public class ScoreController implements Initializable {
 
     private Scene scene;
@@ -40,6 +43,11 @@ public class ScoreController implements Initializable {
     @FXML
     private ListView<String> highScorePoints;
 
+    /**
+     * Method to read from text file for high score.
+     * @param url uniform resource locator
+     * @param resourceBundle locale-specific object
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         BufferedReader bufferedReader;

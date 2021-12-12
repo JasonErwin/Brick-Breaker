@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Class that controls GameScore Functionality
+ */
 public class GameScoreController implements Initializable {
 
     @FXML
@@ -19,6 +22,11 @@ public class GameScoreController implements Initializable {
     @FXML
     private ListView<String> gameScorePoint;
 
+    /**
+     * Method to read high score from txt file
+     * @param url uniform resource locator
+     * @param resourceBundle contains locale-specific objects
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         BufferedReader bufferedReader;

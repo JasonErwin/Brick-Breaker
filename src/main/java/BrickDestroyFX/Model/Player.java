@@ -112,10 +112,18 @@ public class Player {
         playerFace.setY(ballPoint.getY());
     }
 
+    /**
+     * Set Player move amount.
+     * @param moveAmount how much a player model moves
+     */
     public void setMoveAmount(int moveAmount) {
         this.moveAmount = moveAmount;
     }
 
+    /**
+     * Getter for player movement
+     * @return movement performed by player's action
+     */
     public int getMoveAmount() {
         return moveAmount;
     }

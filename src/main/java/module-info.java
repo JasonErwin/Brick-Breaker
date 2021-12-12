@@ -1,3 +1,6 @@
+/**
+ * Defines all subdirectories of the Project
+ */
 module com.example.softwaremaintenance {
     requires javafx.controls;
     requires javafx.fxml;
