@@ -1,0 +1,4 @@
+--patch-module
+com.example.softwaremaintenance=_
+--add-reads
+com.example.softwaremaintenance=ALL-UNNAMED
