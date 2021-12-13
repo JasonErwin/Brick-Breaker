@@ -14,6 +14,8 @@ Separate methods that controls the generation of new levels into its own class k
 
 Create a brickFactory from the makeBrick method in Level. Factory design patterns provides loose coupling and high cohesion.
 
+Split GameBoard into GameBoardController, GameBoardView and GameBoardModel Respectively.
+
 ### <ins>MVC (10%)</ins>
 Convert GameBoard into GameBoardModel , GameBoardView and GameBoardControl respectively. Benefits of converting GameBoard to MVC are ease to maintain due to components having low dependency on one another and adoption of MVC makes an application easier to understand.
 
@@ -54,6 +56,8 @@ move(), getBrickCount(), resetBallCount(), isBallLost(),isDone(), isBallEnd(),ge
 
 ### <ins>Maven (2%)</ins>
 Use Maven as it can add all dependencies required for the project automatically by reading pom file.
+
+Created Jar Files for BrickDestroy Application. (**Only Used shaded.jar version**)
 
 ## Addition 
 
