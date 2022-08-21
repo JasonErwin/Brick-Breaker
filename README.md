@@ -1,82 +1,48 @@
-# <ins>BrickDestroy FX (Prepared by Loo Yang Shen Jason)</ins>
+# Brick Breaker  FX 
+A classic retro game (Brick Breaker) would have to be maintained and extended with additonal features.
 
-## <ins>Refactoring </ins>
+More information about Brick Breaker could be found here : https://heroconcept.com/a-brief-history-of-brick-breaker-video-games/
 
-### <ins>Package (2%)</ins>
-Change Package name from test to BrickDestroyFX to make it more meaningful.
+Original Source Code of the Game was obtained from : https://github.com/FilippoRanza/Brick_Destroy
 
-### <ins>Basic Maintenance (6%)</ins>
-Separate Crack from Brick Class to follow Single Responsibility Principle.
+## Key Refactoring Work
+1. Change package name from test to BrickDestroyFX to make it more meaningful.
+2. Separate Crack Class from Brick Class to follow Single Responsibility Principle.
+3. Update methods in CementBrick and Crack to correctly represent the sepeartion of Crack Class from Brick Class.
+4. Removed method overloading in Crack class by renaming one of the makeCrack() method to crack. 
+5. Uses Enum to replace constant integer type for the  impactDirection in Brick Class and the Direction in Crack class.
+6. Introduce polymorphism in Brick class in setImpact() method for non-crackable brick class.
+7. Create a Level class from Wall class that contains the logic behind level generation.
+8. Convert the entire game from Swing to JavaFX whiles maintaining game logic .
 
-Update methods in CementBrick and Crack due to separation of Crack from Brick Class.
+## Additions and Extensions
+### Simple Add Ons:
+1. Made Changes to the design of the main menu screen in terms of layout.
+2. Added background images for Main Menu , Tutorial Menu and Pause Menu.
+3. Changed the game icon.
+4. Added an tutorial button that shows the controls of the game.
 
-Separate methods that controls the generation of new levels into its own class known as Level. This is to follow the Single Responsibility Principle.
+### High Score List:
+1. Added the recording of high score functionalities by adopting file handling.
 
-Create a brickFactory from the makeBrick method in Level. Factory design patterns provides loose coupling and high cohesion.
+### Additonal playable levels:
+1.  Added 2 extra level:
+    - a) First Level : Contained 40 Bricks ,  'CEMENT' Bricks
+    - b) Second Level : Contained 40 Brick ,  'STEEL' Bricks
 
-Split GameBoard into GameBoardController, GameBoardView and GameBoardModel Respectively.
+### Exciting Features:
+1. Implemented a score system in the GameLogic class.
+     - Increase: Completing a level, type of brick affect scoring.
 
-### <ins>MVC (10%)</ins>
-Convert GameBoard into GameBoardModel , GameBoardView and GameBoardControl respectively. Benefits of converting GameBoard to MVC are ease to maintain due to components having low dependency on one another and adoption of MVC makes an application easier to understand.
+## Design Pattern
+1. Create BrickFactory class to better represent switch statements in Levels Class. This is done to encourage abstraction.
+2. Applied MVC patterns for GameBoard classes and all the scene in the game for easy regression tests at a later date.
+3. Created a number of  models for controller.
+4. Created a SceneManager class which handle the stage and scene transition in the entire game.
 
-Arrange BrickDestroyFX Application into MVC patterns. Reasoning is same as above.
+## More:
+1. Added buttons for Info Screen and Leaderboard.
+    - Tutorial Screen: Display the game controls.
+    - LeaderBoard: Display the top 5 player score from a txt file.
+2. Improved the view and design for all the FXML file using CSS, images and icons .
 
-### <ins>JUnit Tests (10%) </ins>
-<ins>GameBoardView Class</ins>
-
-getWall() Method.
-
-<ins>CementBrick Class</ins>
-
-repair() Method.
-
-<ins>Crack Class</ins>
-
-draw(), reset(), makeCrack() Methods.
-
-<ins>GameBoardModel Class</ins>
-
-isCheck(), getMessage(), setMessage(), getInput(), setInput(), isRun(), setRun(), setCheck() Methods.
-
-<ins>Level Class</ins>
-
-nextLevel(), hasLevel() Methods.
-
-<ins>Player Class</ins>
-
-moveLeft(), movRight(), stop(), getWidth(), getHeight(), getX(), getY(), moveTo() Methods.
-
-<ins>SteelBrick Class</ins>
-
-impact() Method.
-
-<ins>Wall Class</ins>
-
-move(), getBrickCount(), resetBallCount(), isBallLost(),isDone(), isBallEnd(),getBallCount(), impactBorder(),setBallCount() , setBrickCount(), setBallXSpeed(), setBallYSpeed(),makeBall(),ballReset(),wallReset() Methods.
-
-### <ins>Maven (2%)</ins>
-Use Maven as it can add all dependencies required for the project automatically by reading pom file.
-
-Created Jar Files for BrickDestroy Application. (**Only Used shaded.jar version**)
-
-## Addition 
-
-### <ins>Score (10%)</ins>
-Implemented scoring into to game by destroying bricks. 
-
-Added a button to show high score in main menu by reading a prepared txt file.
-
-User is able to press "R" on the keyboard to have a High Score Pop Up to appear in game.
-
-### <ins>Additional Playable Level(5%)</ins>
-Added two levels made of all steel and cement brick respectively.
-
-### <ins>Simple Additions(5%)</ins>
-Added a relevant Main Menu Picture.
-
-Added info button that shows how to play the game.
-
-## <ins>JavaFX (10% Bonus)</ins>
-Converted the whole BrickDestroy Application to JavaFX from JavaSwing. 
-
-Covers Game Logic , Main menu , Pause Screen and Debug Panel.
